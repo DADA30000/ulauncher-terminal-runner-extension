@@ -55,7 +55,7 @@ class RunCommand(EventListener):
         envUserShell = environ["SHELL"]
 
         if shell == "fish":
-            subprocess.run( [f'{terminal} {exec} "{command}"'], shell=True )
+            subprocess.run( [f' env "{command}"'], shell=True )
         else:
             subprocess.run( [f'{terminal} {exec} {envUserShell} -c -i "{command}; {envUserShell}"'], shell=True )
 
